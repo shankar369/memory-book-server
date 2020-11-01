@@ -10,7 +10,7 @@ const SubCategory = mongoose.Schema(
       unique: true,
     },
     hasSubCategory: {
-      type: Boolean,
+      type: String,
       required: true,
     },
     parentId: {

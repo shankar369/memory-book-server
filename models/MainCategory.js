@@ -9,7 +9,7 @@ const MainCategory = new mongoose.Schema(
       unique: true,
     },
     hasSubCategory: {
-      type: Boolean,
+      type: String,
       required: true,
       default: false,
     },
