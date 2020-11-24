@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 const mainCategoryRoute = require("./routes/mainCategory.route");
 const subCategoryRoute = require("./routes/subCategory.route");
 const snippetRoute = require("./routes/snippet.route");
+const dictionaryRoute = require("./routes/dictionary.route");
 
 // mongodb connection
 connectMongodb();
@@ -34,6 +35,7 @@ app.use(bodyParser.json());
 app.use("/api", mainCategoryRoute);
 app.use("/api", subCategoryRoute);
 app.use("/api", snippetRoute);
+app.use("/api", dictionaryRoute);
 
 app.use((req, res) => {
   res.status(404).json({

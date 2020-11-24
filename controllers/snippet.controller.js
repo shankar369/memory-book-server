@@ -49,3 +49,14 @@ exports.updateSnippet = (req, res) => {
     }
   );
 };
+
+exports.deleteSnippet = (req, res) => {
+  const snippetId = req.params.snippetId;
+  console.log(req.body, "mongoo");
+  Snippet.findByIdAndDelete(snippetId, (err, updatedSnippet) => {
+    if (err) {
+      return res.status(400).json({ error: err });
+    }
+    return res.json(updatedSnippet);
+  });
+};
